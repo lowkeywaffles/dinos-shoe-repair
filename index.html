@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dino's Shoe Repair &amp; Alterations | Preston Rd, Dallas</title>
+<meta name="description" content="Family-owned shoe repair and alterations at 17390 Preston Rd, Dallas. Shoe repair, cleaning, shining and stretching, purse restoration, hems, zippers, coat linings and more. Fair prices for 20+ years. Call (972) 239-7194.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231f3a2e'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-weight='900' font-size='34' fill='%23d4ad52'%3ED%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#f2efe7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1a15" media="(prefers-color-scheme: dark)">
+<script>
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem("theme"); } catch (e) {}
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    if (t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches) document.documentElement.classList.add("dark");
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Libre+Franklin:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Old-school cobbler: shop-door green, gold-leaf window lettering, workbench wood and brass */
+  :root {
+    color-scheme: light;
+    --bg: #f2efe7; --bg-alt: #e9e4d8; --card: #fbf9f4; --ink: #1b241f; --soft: #5f665f; --line: #dcd5c5;
+    --green: #1f3a2e; --gold: #c9a24a; --gold-text: #8f6a1c; --wood: #8a5a36; --btn: #1f3a2e; --btn-h: #2c5242; --btn-fg: #f2efe7;
+    --tint: #e3e8de; --header: rgba(242, 239, 231, .9); --shadow: rgba(27, 36, 31, .18); --map: none;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0f1a15; --bg-alt: #13201a; --card: #18271f; --ink: #efeadf; --soft: #a9b1a8; --line: #2a3b32;
+    --green: #0a130f; --gold-text: #e1bd66; --btn: #d4ad52; --btn-h: #e1bd66; --btn-fg: #14110a;
+    --tint: #203329; --header: rgba(15, 26, 21, .88); --shadow: rgba(0, 0, 0, .6); --map: invert(.9) hue-rotate(180deg) saturate(.4);
+  } }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0f1a15; --bg-alt: #13201a; --card: #18271f; --ink: #efeadf; --soft: #a9b1a8; --line: #2a3b32;
+    --green: #0a130f; --gold-text: #e1bd66; --btn: #d4ad52; --btn-h: #e1bd66; --btn-fg: #14110a;
+    --tint: #203329; --header: rgba(15, 26, 21, .88); --shadow: rgba(0, 0, 0, .6); --map: invert(.9) hue-rotate(180deg) saturate(.4);
+  }
+  /* Theme change: the light spreads out from the bulb */
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+  ::view-transition-new(root) { animation: bulb .6s ease-out; }
+  @keyframes bulb { from { clip-path: circle(0 at var(--rx, 100%) var(--ry, 0)); } to { clip-path: circle(var(--rr, 150vmax) at var(--rx, 100%) var(--ry, 0)); } }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Libre Franklin", system-ui, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+  h1, h2, h3 { font-family: "Alfa Slab One", Rockwell, serif; font-weight: 400; line-height: 1.05; letter-spacing: .005em; text-wrap: balance; }
+  .eyebrow { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-text); margin-bottom: 12px; }
+  /* gold-leaf lettering like a painted shop window */
+  .leaf { background: linear-gradient(180deg, #f7e3a1 0%, #d4ad52 45%, #9c7424 55%, #e6c46d 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(2px 2px 0 rgba(0,0,0,.55)); }
+
+  header { position: sticky; top: 0; z-index: 20; background: var(--header); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .nav { height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex: none; }
+  .logo .mark { width: 44px; height: 44px; border-radius: 10px; background: #1f3a2e; display: grid; place-items: center; font: 400 26px/1 "Alfa Slab One", serif; }
+  .logo b { display: block; font: 400 22px/1 "Alfa Slab One", serif; }
+  .logo small { display: block; font-size: 11px; font-weight: 700; letter-spacing: .14em; color: var(--soft); text-transform: uppercase; margin-top: 3px; }
+  .links { display: flex; align-items: center; gap: 20px; font-size: 15px; }
+  .links > a:not(.btn) { text-decoration: none; color: var(--soft); font-weight: 600; }
+  .links > a:not(.btn):hover { color: var(--ink); }
+
+  /* Language: a little neon sign that flickers to the other language */
+  .neon { height: 40px; min-width: 66px; padding: 0 12px; border-radius: 8px; border: 2px solid #3a2a1c; background: #140f0b; cursor: pointer; flex: none;
+    font: 800 15px/1 "Libre Franklin", sans-serif; letter-spacing: .12em; color: #ff5fa2; text-shadow: 0 0 4px #ff5fa2, 0 0 12px #ff2d84; }
+  .neon.flick { animation: flick .7s steps(1); }
+  @keyframes flick { 0%, 20%, 45% { opacity: 1; } 10%, 30%, 55% { opacity: .15; text-shadow: none; } 100% { opacity: 1; } }
+
+  /* Theme: a workshop bulb with a pull chain */
+  .pull { position: relative; width: 36px; height: 56px; border: 0; background: none; padding: 0; cursor: pointer; flex: none; margin-top: -10px; }
+  .pull svg { width: 100%; height: 100%; overflow: visible; }
+  .pull .glass { fill: #e9e4d8; stroke: #8f8a7e; transition: fill .3s, filter .3s; }
+  .dark .pull .glass { fill: #ffd76a; filter: drop-shadow(0 0 8px rgba(255, 215, 106, .8)); }
+  .pull .chain { transition: transform .25s; }
+  .pull.tug .chain { transform: translateY(5px); }
+  .neon:focus-visible, .pull:focus-visible, .btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 8px; }
+
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; border-radius: 6px; font-weight: 800; font-size: 15px; text-decoration: none; border: 0; cursor: pointer; transition: transform .15s, background .15s; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-p { background: var(--btn); color: var(--btn-fg); }
+  .btn-p:hover { background: var(--btn-h); }
+  .btn-g { background: var(--card); color: var(--ink); border: 1px solid var(--line); }
+  .links .btn { padding: 10px 16px; }
+  body, header, .board, .hours, details, .btn-g, .perk { transition: background-color .4s, border-color .4s, color .4s; }
+
+  /* Hero: the shop window */
+  .hero { padding: 40px 0 70px; }
+  .window { position: relative; border-radius: 16px; overflow: hidden; background: #1f3a2e; color: #efeadf; padding: 54px 56px 46px; border: 10px solid #5c3d24;
+    box-shadow: inset 0 0 0 2px #c9a24a, 0 40px 70px -40px var(--shadow);
+    background-image: linear-gradient(115deg, rgba(255,255,255,.07) 0 18%, transparent 18% 32%, rgba(255,255,255,.04) 32% 36%, transparent 36%); }
+  .window-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 30px; align-items: center; }
+  .status { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(201,162,74,.5); border-radius: 999px; padding: 6px 14px 6px 10px; font-size: 14px; font-weight: 700; margin-bottom: 22px; }
+  .status i { width: 9px; height: 9px; border-radius: 50%; background: #8e978e; }
+  .status.open i { background: #3ccf78; box-shadow: 0 0 0 4px rgba(60,207,120,.25); }
+  .window h1 { font-size: clamp(50px, 7.4vw, 96px); margin-bottom: 8px; }
+  .window .sub { font: 400 clamp(18px, 2.2vw, 26px)/1.2 "Alfa Slab One", serif; color: #d4ad52; letter-spacing: .06em; margin-bottom: 22px; }
+  .window p.lead { font-size: 18px; color: #c8d0c7; max-width: 520px; margin-bottom: 28px; }
+  .window .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  .window .btn-p { background: #d4ad52; color: #14110a; }
+  .window .btn-g { background: transparent; color: #efeadf; border-color: rgba(239,234,223,.4); }
+  .emblem { justify-self: center; width: 100%; max-width: 300px; }
+  .emblem svg { width: 100%; height: auto; display: block; }
+  .emblem .spin { transform-origin: 150px 150px; animation: spin 40s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .emblem .spin, .neon.flick { animation: none; } }
+
+  section { padding: 86px 0; }
+  .alt { background: var(--bg-alt); }
+  .head { max-width: 640px; margin-bottom: 40px; }
+  .head h2 { font-size: clamp(36px, 5vw, 56px); margin-bottom: 12px; }
+  .head p { color: var(--soft); font-size: 17px; }
+
+  /* Two price-board style service lists */
+  .boards { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .board { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 30px; }
+  .board h3 { display: flex; align-items: center; gap: 12px; font-size: 30px; margin-bottom: 16px; }
+  .board h3 .i { width: 46px; height: 46px; border-radius: 50%; background: var(--green); color: #d4ad52; display: grid; place-items: center; flex: none; }
+  .board ul { list-style: none; }
+  .board li { display: grid; grid-template-columns: minmax(0, 1fr); padding: 13px 0; border-bottom: 1px dotted var(--line); }
+  .board li:last-child { border-bottom: 0; }
+  .board li b { font-size: 17px; font-weight: 700; }
+  .board li i { font-style: normal; color: var(--soft); font-size: 14.5px; }
+
+  .perks { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .perk { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; position: relative; }
+  .perk::before { content: ""; position: absolute; top: 14px; right: 14px; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 3px var(--tint); }
+  .perk h3 { font-size: 22px; margin-bottom: 6px; }
+  .perk p { color: var(--soft); font-size: 15px; }
+
+  .visit { display: grid; grid-template-columns: .9fr 1.1fr; gap: 22px; }
+  .hours { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 30px; display: grid; gap: 16px; align-content: start; }
+  .hours h3 { font-size: 28px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  td { padding: 9px 0; border-bottom: 1px dotted var(--line); }
+  td:last-child { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+  tr.today td { color: var(--gold-text); font-weight: 800; }
+  .row { display: flex; gap: 12px; align-items: flex-start; text-decoration: none; }
+  .row .ic { width: 40px; height: 40px; border-radius: 50%; background: var(--green); color: #d4ad52; display: grid; place-items: center; flex: none; }
+  .row strong { display: block; } .row span { color: var(--soft); font-size: 14px; }
+  .map { border-radius: 14px; overflow: hidden; border: 1px solid var(--line); min-height: 400px; background: var(--tint); }
+  .map iframe { width: 100%; height: 100%; min-height: 400px; border: 0; display: block; filter: var(--map); }
+
+  .faq { max-width: 800px; }
+  details { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px; margin-bottom: 10px; }
+  summary { cursor: pointer; font-weight: 800; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-size: 22px; line-height: 1; color: var(--gold-text); transition: transform .25s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { margin-top: 8px; color: var(--soft); }
+
+  .cta { background: #1f3a2e; border: 8px solid #5c3d24; box-shadow: inset 0 0 0 2px #c9a24a; color: #efeadf; border-radius: 14px; padding: 50px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+  .cta h2 { font-size: clamp(34px, 4.6vw, 54px); }
+  .cta p { color: #c8d0c7; margin-top: 6px; }
+  .cta .btn { background: #d4ad52; color: #14110a; flex: none; }
+
+  footer { padding: 34px 0 110px; color: var(--soft); font-size: 14px; }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; border-top: 1px solid var(--line); padding-top: 24px; }
+  .callbar { display: none; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 30; gap: 10px; }
+  .callbar .btn { flex: 1; justify-content: center; box-shadow: 0 10px 30px -8px var(--shadow); }
+
+  @media (max-width: 960px) {
+    .window-grid, .visit, .boards { grid-template-columns: 1fr; }
+    .perks { grid-template-columns: 1fr 1fr; }
+    .links > a:not(.btn) { display: none; }
+    .emblem { max-width: 220px; }
+    .cta { flex-direction: column; align-items: flex-start; padding: 36px 26px; }
+  }
+  @media (max-width: 600px) {
+    .wrap { padding: 0 16px; }
+    section { padding: 60px 0; }
+    .window { padding: 34px 24px 30px; border-width: 7px; }
+    .perks { grid-template-columns: 1fr; }
+    .links .btn { display: none; }
+    .logo small { display: none; }
+    .callbar { display: flex; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Dino's Shoe Repair &amp; Alterations"><span class="mark"><span class="leaf">D</span></span><span><b>Dino's</b><small data-i18n="logoSub">Shoe Repair &amp; Alterations</small></span></a>
+    <nav class="links">
+      <a href="#services" data-i18n="navServices">Services</a>
+      <a href="#visit" data-i18n="navVisit">Hours</a>
+      <button type="button" class="neon" id="neon" aria-label="Cambiar a español">EN</button>
+      <button type="button" class="pull" id="pull" aria-label="Toggle dark mode">
+        <svg viewBox="0 0 36 56" aria-hidden="true">
+          <path d="M18 0v8" stroke="var(--soft)" stroke-width="1.5"/>
+          <rect x="13" y="7" width="10" height="7" rx="1.5" fill="#8a7a5c"/>
+          <path class="glass" d="M18 14c-8 0-11 6-11 11 0 4 3 6 5 9h12c2-3 5-5 5-9 0-5-3-11-11-11z" stroke-width="1.2"/>
+          <rect x="13" y="34" width="10" height="4" rx="1" fill="#8a7a5c"/>
+          <g class="chain"><path d="M27 18v24" stroke="#b69a5a" stroke-width="1.4" stroke-dasharray="2 1.5"/><circle cx="27" cy="44" r="2.4" fill="#c9a24a"/></g>
+        </svg>
+      </button>
+      <a class="btn btn-p" href="tel:+19722397194"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>(972) 239-7194</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="window">
+        <div class="window-grid">
+          <div>
+            <div class="status" id="status"><i></i><span id="status-text"></span></div>
+            <h1 class="leaf">Dino's</h1>
+            <div class="sub" data-i18n="sub">Shoe Repair · Alterations</div>
+            <p class="lead" data-i18n="heroLead">A family-owned neighborhood cobbler and tailor on Preston Rd for over 20 years. Shoes, purses, hems, zippers and more, fixed right at a fair price.</p>
+            <div class="ctas">
+              <a class="btn btn-p" href="tel:+19722397194" data-i18n="ctaCall">Call Dino's</a>
+              <a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&destination=17390+Preston+Rd+Ste+257+Dallas+TX+75252" target="_blank" rel="noopener" data-i18n="ctaDir">Get directions</a>
+            </div>
+          </div>
+          <div class="emblem" aria-hidden="true">
+            <svg viewBox="0 0 300 300">
+              <defs><path id="ring" d="M150 150 m-112 0 a112 112 0 1 1 224 0 a112 112 0 1 1 -224 0"/></defs>
+              <circle cx="150" cy="150" r="140" fill="none" stroke="#c9a24a" stroke-width="2"/>
+              <circle cx="150" cy="150" r="90" fill="#16291f" stroke="#c9a24a" stroke-width="2"/>
+              <g class="spin"><text font-family="Libre Franklin, sans-serif" font-weight="800" font-size="17" letter-spacing="5" fill="#d4ad52"><textPath href="#ring" id="ring-text">FAMILY OWNED · 20+ YEARS · PRESTON RD · </textPath></text></g>
+              <!-- cobbler's hammer and boot heel -->
+              <g transform="translate(150 152)">
+                <path d="M-42 20c0-26 10-46 22-56l18 4c-4 14-4 28 6 40l40 4c8 1 10 10 2 12-30 6-58 6-88-4z" fill="#d4ad52"/>
+                <path d="M-30 -48l40 40" stroke="#efeadf" stroke-width="6" stroke-linecap="round"/>
+                <rect x="-46" y="-62" width="34" height="14" rx="3" transform="rotate(45 -29 -55)" fill="#efeadf"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="alt">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow" data-i18n="svcEyebrow">What we fix</span><h2 data-i18n="svcTitle">Two benches, one shop</h2><p data-i18n="svcLead">Bring your shoes, your bags and your clothes. Dino's handles all of it under one roof.</p></div>
+      <div class="boards">
+        <div class="board">
+          <h3><span class="i"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 16c0-2 2-3 5-3 2 0 4-2 6-4 1-1 2-1 3 0 2 2 3 3 6 4 1 0 1 2 0 3-1 1-3 1-9 1H3c-1 0-1 0-1-1z"/></svg></span><span data-i18n="b1">Shoes &amp; bags</span></h3>
+          <ul>
+            <li><b data-i18n="s1">Shoe repair</b><i data-i18n="s1d">Soles, heels and worn treads brought back to life</i></li>
+            <li><b data-i18n="s2">Cleaning &amp; shining</b><i data-i18n="s2d">A proper clean and shine for leather shoes and boots</i></li>
+            <li><b data-i18n="s3">Stretching</b><i data-i18n="s3d">Shoes that pinch, stretched to fit comfortably</i></li>
+            <li><b data-i18n="s4">Purse restoration</b><i data-i18n="s4d">Bags and purses repaired and refreshed</i></li>
+          </ul>
+        </div>
+        <div class="board">
+          <h3><span class="i"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.1 8.1 20 20M8.1 15.9 20 4"/></svg></span><span data-i18n="b2">Sewing &amp; alterations</span></h3>
+          <ul>
+            <li><b data-i18n="s5">Hems</b><i data-i18n="s5d">Pants and curtains hemmed to the right length</i></li>
+            <li><b data-i18n="s6">Zippers</b><i data-i18n="s6d">Broken zippers repaired or replaced</i></li>
+            <li><b data-i18n="s7">Coat linings</b><i data-i18n="s7d">Torn or worn linings replaced</i></li>
+            <li><b data-i18n="s8">Upholstery updates</b><i data-i18n="s8d">Small furniture fabric jobs, done carefully</i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head"><span class="eyebrow" data-i18n="whyEyebrow">Why neighbors keep coming back</span><h2 data-i18n="whyTitle">The way a neighborhood shop should be</h2></div>
+      <div class="perks">
+        <div class="perk"><h3 data-i18n="p1t">Fair prices</h3><p data-i18n="p1p">Neighbors say there's no markup, just an honest price for the work.</p></div>
+        <div class="perk"><h3 data-i18n="p2t">Quality work</h3><p data-i18n="p2p">Careful, skilled repairs and sewing you can count on.</p></div>
+        <div class="perk"><h3 data-i18n="p3t">Family owned</h3><p data-i18n="p3p">Over 20 years of fixing shoes and clothes for Dallas.</p></div>
+        <div class="perk"><h3 data-i18n="p4t">Close by</h3><p data-i18n="p4p">In Preston Trail Plaza, easy to drop off on your errands.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit" class="alt">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow" data-i18n="visitEyebrow">Visit</span><h2 data-i18n="visitTitle">Preston Trail Plaza, Suite 257</h2></div>
+      <div class="visit">
+        <div class="hours">
+          <h3 data-i18n="hoursTitle">Shop hours</h3>
+          <table><tbody id="hours"></tbody></table>
+          <a class="row" href="tel:+19722397194"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><span><strong>(972) 239-7194</strong><span data-i18n="callSub">Call for a quote</span></span></a>
+          <a class="row" href="https://www.google.com/maps/dir/?api=1&destination=17390+Preston+Rd+Ste+257+Dallas+TX+75252" target="_blank" rel="noopener"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><strong>17390 Preston Rd, Ste 257</strong><span>Dallas, TX 75252</span></span></a>
+        </div>
+        <div class="map"><iframe id="map" title="Map" loading="lazy" src="https://maps.google.com/maps?q=17390+Preston+Rd+Ste+257,+Dallas,+TX+75252&z=15&output=embed"></iframe></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head"><span class="eyebrow" data-i18n="faqEyebrow">Questions</span><h2 data-i18n="faqTitle">Ask the cobbler</h2></div>
+      <div class="faq">
+        <details open><summary data-i18n="q1">Is it worth repairing my shoes?</summary><p data-i18n="a1">Often, yes. Good shoes and boots can be resoled and re-heeled for a lot less than replacing them. Bring them in and Dino will tell you honestly.</p></details>
+        <details><summary data-i18n="q2">Can you fix a purse or bag?</summary><p data-i18n="a2">Yes, we restore purses and bags. Bring it in for a look and a quote.</p></details>
+        <details><summary data-i18n="q3">Do you do alterations too?</summary><p data-i18n="a3">Yes: hems for pants and curtains, zippers, coat linings and more, all in the same shop.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="cta"><div><h2 class="leaf" data-i18n="ctaTitle">Don't toss it. Fix it.</h2><p data-i18n="ctaLead">Bring it to Dino's on Preston Rd.</p></div><a class="btn" href="tel:+19722397194">(972) 239-7194</a></div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>© <span id="yr"></span> Dino's Shoe Repair &amp; Alterations · 17390 Preston Rd, Ste 257, Dallas, TX 75252</span><a href="tel:+19722397194">(972) 239-7194</a></div></footer>
+<div class="callbar"><a class="btn btn-p" href="tel:+19722397194" data-i18n="barCall">Call</a><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&destination=17390+Preston+Rd+Ste+257+Dallas+TX+75252" target="_blank" rel="noopener" data-i18n="barDir">Directions</a></div>
+
+<script>
+  const ES = {
+    title: "Dino's Shoe Repair & Alterations | Zapatería y costura en Preston Rd, Dallas",
+    desc: "Reparación de zapatos y arreglos de ropa, negocio familiar en 17390 Preston Rd, Dallas. Reparación, limpieza, lustre y estiramiento de zapatos, restauración de bolsas, dobladillos, cierres, forros y más. Precios justos por más de 20 años. Llama al (972) 239-7194.",
+    logoSub: "Zapatería y Arreglos", navServices: "Servicios", navVisit: "Horario",
+    sub: "Zapatería · Arreglos de ropa",
+    heroLead: "Zapatero y sastre de barrio, negocio familiar en Preston Rd por más de 20 años. Zapatos, bolsas, dobladillos, cierres y más, bien reparados y a precio justo.",
+    ctaCall: "Llama a Dino's", ctaDir: "Cómo llegar",
+    svcEyebrow: "Lo que reparamos", svcTitle: "Dos mesas de trabajo, un taller", svcLead: "Trae tus zapatos, tus bolsas y tu ropa. Dino's se encarga de todo bajo un mismo techo.",
+    b1: "Zapatos y bolsas", s1: "Reparación de zapatos", s1d: "Suelas, tacones y huellas gastadas como nuevas",
+    s2: "Limpieza y lustre", s2d: "Una buena limpieza y lustre para zapatos y botas de piel",
+    s3: "Estiramiento", s3d: "Zapatos que aprietan, estirados para que queden cómodos",
+    s4: "Restauración de bolsas", s4d: "Bolsas y carteras reparadas y renovadas",
+    b2: "Costura y arreglos", s5: "Dobladillos", s5d: "Pantalones y cortinas al largo correcto",
+    s6: "Cierres", s6d: "Cierres rotos reparados o reemplazados", s7: "Forros de abrigo", s7d: "Forros rotos o gastados reemplazados",
+    s8: "Tapicería", s8d: "Pequeños trabajos de tela en muebles, hechos con cuidado",
+    whyEyebrow: "Por qué los vecinos regresan", whyTitle: "Como debe ser un negocio de barrio",
+    p1t: "Precios justos", p1p: "Los vecinos dicen que no hay sobreprecio, solo un precio honesto por el trabajo.",
+    p2t: "Trabajo de calidad", p2p: "Reparaciones y costura cuidadosas en las que puedes confiar.",
+    p3t: "Negocio familiar", p3p: "Más de 20 años reparando zapatos y ropa en Dallas.",
+    p4t: "Cerca de ti", p4p: "En Preston Trail Plaza, fácil de dejar mientras haces tus mandados.",
+    visitEyebrow: "Visítanos", visitTitle: "Preston Trail Plaza, local 257", hoursTitle: "Horario", callSub: "Llama para una cotización",
+    faqEyebrow: "Preguntas", faqTitle: "Pregúntale al zapatero",
+    q1: "¿Vale la pena reparar mis zapatos?", a1: "Muchas veces sí. Los buenos zapatos y botas se pueden resuelar y cambiar de tacón por mucho menos que comprar nuevos. Tráelos y Dino te dirá con honestidad.",
+    q2: "¿Pueden arreglar una bolsa?", a2: "Sí, restauramos bolsas y carteras. Tráela para revisarla y darte una cotización.",
+    q3: "¿También hacen arreglos de ropa?", a3: "Sí: dobladillos de pantalones y cortinas, cierres, forros de abrigos y más, en el mismo taller.",
+    ctaTitle: "No lo tires. Arréglalo.", ctaLead: "Tráelo a Dino's en Preston Rd.", barCall: "Llamar", barDir: "Cómo llegar"
+  };
+  const EN = { title: document.title, desc: document.querySelector('meta[name="description"]').content };
+  document.querySelectorAll("[data-i18n]").forEach(el => { EN[el.dataset.i18n] = el.innerHTML; });
+  const RING = { en: "FAMILY OWNED · 20+ YEARS · PRESTON RD · ", es: "NEGOCIO FAMILIAR · MÁS DE 20 AÑOS · " };
+
+  const HOURS = { 0: null, 1: [9, 18], 2: [9, 18], 3: [9, 18], 4: [9, 18], 5: [9, 18], 6: [9, 16] };
+  const DAYS = { en: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], es: ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"] };
+  const T = {
+    en: { closed: "Closed", open: t => "Open now · until " + t, opens: t => "Opens today at " + t, shut: "Closed now" },
+    es: { closed: "Cerrado", open: t => "Abierto ahora · hasta las " + t, opens: t => "Abre hoy a las " + t, shut: "Cerrado ahora" }
+  };
+  const fmt = h => (h % 12 || 12) + ":00 " + (h < 12 ? "AM" : "PM");
+  const now = new Date(new Date().toLocaleString("en-US", { timeZone: "America/Chicago" }));
+  const today = now.getDay(), hour = now.getHours() + now.getMinutes() / 60;
+  function renderHours(l) {
+    document.getElementById("hours").innerHTML = [1,2,3,4,5,6,0].map(d => { const h = HOURS[d];
+      return `<tr${d === today ? ' class="today"' : ""}><td>${DAYS[l][d]}</td><td>${h ? fmt(h[0]) + " – " + fmt(h[1]) : T[l].closed}</td></tr>`; }).join("");
+    const h = HOURS[today], open = h && hour >= h[0] && hour < h[1];
+    document.getElementById("status").classList.toggle("open", !!open);
+    document.getElementById("status-text").textContent = open ? T[l].open(fmt(h[1])) : (h && hour < h[0] ? T[l].opens(fmt(h[0])) : T[l].shut);
+  }
+
+  let lang = "en";
+  const neon = document.getElementById("neon");
+  function setLang(l) {
+    lang = l;
+    const d = l === "es" ? ES : EN;
+    document.documentElement.lang = l; document.title = d.title;
+    document.querySelector('meta[name="description"]').content = d.desc;
+    document.querySelectorAll("[data-i18n]").forEach(el => { if (d[el.dataset.i18n] !== undefined) el.innerHTML = d[el.dataset.i18n]; });
+    neon.textContent = l.toUpperCase();
+    neon.setAttribute("aria-label", l === "es" ? "Switch to English" : "Cambiar a español");
+    document.getElementById("ring-text").textContent = RING[l];
+    document.getElementById("map").src = "https://maps.google.com/maps?q=17390+Preston+Rd+Ste+257,+Dallas,+TX+75252&z=15&output=embed&hl=" + l;
+    renderHours(l);
+    try { localStorage.setItem("lang", l); } catch (e) {}
+  }
+  neon.addEventListener("click", () => {
+    neon.classList.remove("flick"); void neon.offsetWidth; neon.classList.add("flick");
+    setTimeout(() => setLang(lang === "es" ? "en" : "es"), 180);
+  });
+  let init = new URLSearchParams(location.search).get("lang");
+  if (init !== "en" && init !== "es") { try { init = localStorage.getItem("lang"); } catch (e) { init = null; } }
+  if (init !== "en" && init !== "es") init = (navigator.language || "").toLowerCase().startsWith("es") ? "es" : "en";
+  setLang(init);
+
+  const root = document.documentElement, pull = document.getElementById("pull");
+  const sync = () => pull.setAttribute("aria-pressed", root.classList.contains("dark"));
+  sync();
+  function apply(t) { root.setAttribute("data-theme", t); root.classList.toggle("dark", t === "dark"); sync(); try { localStorage.setItem("theme", t); } catch (e) {} }
+  pull.addEventListener("click", () => {
+    pull.classList.add("tug"); setTimeout(() => pull.classList.remove("tug"), 250);
+    const next = root.classList.contains("dark") ? "light" : "dark";
+    if (!document.startViewTransition || matchMedia("(prefers-reduced-motion: reduce)").matches) return apply(next);
+    const r = pull.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2;
+    root.style.setProperty("--rx", x + "px"); root.style.setProperty("--ry", y + "px");
+    root.style.setProperty("--rr", Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y)) + "px");
+    document.startViewTransition(() => apply(next));
+  });
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", e => { if (!root.hasAttribute("data-theme")) { root.classList.toggle("dark", e.matches); sync(); } });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
